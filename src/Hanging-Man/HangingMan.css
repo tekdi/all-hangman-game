@@ -1,0 +1,32 @@
+.hangman-head,
+.hangman-body,
+.hangman-arm-left,
+.hangman-arm-right,
+.hangman-leg-left,
+.hangman-leg-right {
+  display: none;
+}
+
+.hangman-head.show,
+.hangman-body.show,
+.hangman-arm-left.show,
+.hangman-arm-right.show,
+.hangman-leg-left.show,
+.hangman-leg-right.show {
+  display: block;
+}
+
+
+
+.hangman-head,
+.hangman-body,
+.hangman-arm-left,
+.hangman-arm-right,
+.hangman-leg-left,
+.hangman-leg-right {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
