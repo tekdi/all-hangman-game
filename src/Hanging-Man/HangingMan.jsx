@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, VStack, Heading, Text, HStack } from '@chakra-ui/react';
+import { Button, VStack, Heading, Text, HStack, Box, Flex } from '@chakra-ui/react';
 import './HangingMan.css';
+import LanguageSwitch from '../Components/LanguageSwitch';
 
 const HangmanGame = ({ sourceChars=[], targetWords=[], handleSuccess=[] }) => {
   const words = ["Ajinkya","Sanjay", "Pande"];
@@ -10,6 +11,15 @@ const HangmanGame = ({ sourceChars=[], targetWords=[], handleSuccess=[] }) => {
   const [maxIncorrectGuesses] = useState(10);
   const [gameWon, setGameWon] = useState(false);
   const [gameLost, setGameLost] = useState(false);
+
+
+  const [currentLanguage, setCurrentLanguage] = useState(localStorage.getItem('apphomelang') || 'en');
+
+  const handleLanguageSwitch = () => {
+    const newLanguage = currentLanguage === 'en' ? 'ta' : currentLanguage === 'ta' ? 'kn' : 'en';
+    setCurrentLanguage(newLanguage);
+    localStorage.setItem('apphomelang', newLanguage);
+  };
 
   // useEffect(() => {
   //   targetWords.map((word, index) => {
@@ -140,8 +150,14 @@ const HangmanGame = ({ sourceChars=[], targetWords=[], handleSuccess=[] }) => {
   //   const renderHangman = () => <Text fontSize="xl">Incorrect Guesses: {incorrectGuesses}</Text>;
 
   return (
-    <VStack spacing="4" align="center">
-      <Heading as="h1">Hangman Game</Heading>
+    <VStack mt={'10%'} spacing="4" align="center">
+      <HStack>
+        <Flex position={'absolute'} left={10}>
+        {/* <LanguageSwitch currentLanguage={currentLanguage} onSelectLanguage={handleLanguageSwitch} /> */}
+        </Flex>
+
+      <Heading as="h1" fontSize={'30px'}>Hangman Game</Heading>
+      </HStack>
       {gameLost ? (
         <Text color="red.500">
           You lost! The word was: {word} <br />
