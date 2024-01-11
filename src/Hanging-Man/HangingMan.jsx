@@ -204,17 +204,8 @@ const HangmanGame = () => {
        <Topics topics={topics} handleTopicChange={handleTopicChange}/>
       </Box>
 
-      <Text>{hint}</Text>
-      {/* 
-      <Button onClick={()=> setCurrentLang('en')}>
-        Switch to English
-      </Button>
-      <Button onClick={()=>  setCurrentLang('ta')}>
-        Switch to Tamil
-      </Button>
-      <Button onClick={ ()=> setCurrentLang('kn')}>
-        Switch to Kannad
-      </Button> */}
+      <Text mt={5}>{hint}</Text>
+
 
       {gameLost ? (
         <Text color="red.500">
@@ -241,7 +232,7 @@ const HangmanGame = () => {
           p={"10px"}
           color={"white"}
           borderRadius={"20px"}
-          onClick={resetGame}
+          onClick={()=> resetGame(selectedTopic)}
         >
           Next
         </Button>
