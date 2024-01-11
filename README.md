@@ -4,7 +4,6 @@ Certainly! Creating a README file is a great idea to help users understand and u
 
 # React Hangman Game
 
-![Hangman Game](link-to-an-image-if-available)
 
 ## Table of Contents
 
@@ -74,9 +73,6 @@ This is a simple Hangman game implemented using React and Chakra UI. It allows u
 
 Feel free to contribute to the project. You can open issues or submit pull requests.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
